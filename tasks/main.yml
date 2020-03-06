@@ -22,6 +22,7 @@
       - wget
       - software-properties-common
       - gnupg
+      - https-transport
     update_cache: true
 
 - name: Install Nextdom
@@ -29,4 +30,3 @@
     name:
       - nextdom-mysql
       - nextdom
-    update_cache: true
