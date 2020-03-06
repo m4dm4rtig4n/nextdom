@@ -27,11 +27,15 @@ galaxy_info:
   # To view available platforms and versions (or releases), visit:
   # https://galaxy.ansible.com/api/v1/platforms/
   #
-   platforms:
-   - name: Debian
-     versions:
-     - 9
-     - 10
+  platforms:
+    - name: Debian
+      versions:
+        - 9
+        - 10
+    - name: Raspbian
+      versions:
+        - 9
+        - 10
   # - name: SomePlatform
   #   versions:
   #   - all
