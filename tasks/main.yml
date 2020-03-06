@@ -1,0 +1,32 @@
+---
+# tasks file for nextdom
+
+- name: Enable non-free repo
+  shell: sed -i '/non-free/!s/main/main non-free/' /etc/apt/sources.list
+
+- name: Add repository key
+  apt_key:
+    url: http://debian.nextdom.org/debian/nextdom.gpg.key
+    state: present
+
+- name: Add repository
+  apt_repository:
+    repo: deb http://debian.nextdom.org/debian  nextdom main
+    state: present
+    filename: nextdom
+
+- name: Install dependency
+  apt:
+    name:
+      - ca-certificates
+      - wget
+      - software-properties-common
+      - gnupg
+    update_cache: true
+
+- name: Install Nextdom
+  apt:
+    name:
+      - nextdom-mysql
+      - nextdom
+    update_cache: true
